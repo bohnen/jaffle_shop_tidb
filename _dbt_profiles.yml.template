@@ -1,0 +1,19 @@
+jaffle_shop_tidb:
+  target: dev
+  outputs:
+    dev:
+      type: tidb
+      server: [server/host] gateway01.ap-northeast-1.prod.aws.tidbcloud.com
+      port: [port] 4000
+      schema: [schema] test
+      username: [username]
+      password: [password]
+    prod:
+      type: tidb
+      server: [server/host]
+      port: [port]  # optional
+      database: [schema] # optional, should be same as schema
+      schema: [schema]
+      username: [username]
+      password: [password]
+      driver: MySQL ODBC 8.0 ANSI Driver
