@@ -12,11 +12,22 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "pip3 install --user -r requirements.txt"
+	"postCreateCommand": "pip3 install --user -r requirements.txt",
 
 	// Configure tool-specific properties.
 	// "customizations": {},
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
+	"secrets": {
+		"TIDB_ENDPOINT": {
+			"description": "TiDB Serverless endpoint URL"
+		},
+		"TIDB_USER": {
+			"description": "TiDB Serverless user name"
+		},
+		"TIDB_PASSWORD": {
+			"description": "TiDB Serverless password"
+		}
+	}
 }
