@@ -1,0 +1,19 @@
+jaffle_shop_tidb:
+  target: dev
+  outputs:
+    dev:
+      type: tidb
+      server: "{{ env_var('TIDB_ENDPOINT') }}"
+      port: 4000
+      schema: test
+      username: "{{ env_var('TIDB_USER') }}"
+      password: "{{ env_var('TIDB_PASSWORD') }}"
+    prod:
+      type: tidb
+      server: "{{ env_var('TIDB_ENDPOINT') }}"
+      port: 4000
+      database: prod # optional, should be same as schema
+      schema: prod
+      username: "{{ env_var('TIDB_USER') }}"
+      password: "{{ env_var('TIDB_PASSWORD') }}"
+      driver: MySQL ODBC 8.0 ANSI Driver
